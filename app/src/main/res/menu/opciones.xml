@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/op_Emp"
+        android:icon="@drawable/ic_launcher_background"
+        android:title="Administrar Empleados"
+        />
+    <item android:id="@+id/op_Herr"
+        android:icon="@drawable/ic_launcher_background"
+        android:title="Op Herramientas"
+        >
+        <menu>
+            <item android:id="@+id/agregar_erramienta"
+                android:icon="@drawable/ic_launcher_background"
+                android:title="Administrar Empleados"
+                />
+            <item android:id="@+id/quitar_erramienta"
+                android:icon="@drawable/ic_launcher_background"
+                android:title="Administrar Empleados"
+                />
+        </menu>
+    </item>
+</menu>

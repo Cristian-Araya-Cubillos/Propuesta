@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Propuesta</string>
+    <string-array name="sucursales">
+        <item>San Miguel</item>
+        <item>Pedro Aguirre Cerda</item>
+        <item>Santiago</item>
+
+    </string-array>
+</resources>

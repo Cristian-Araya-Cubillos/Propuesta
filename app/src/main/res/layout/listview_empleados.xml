@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".administra_Empleado.datosEmpSucursal">
+    <ImageView
+        android:id="@+id/imageBase"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:layout_weight="20"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:layout_weight="80"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textnomEmp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="50"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/textRun_emp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="50"
+            android:text="TextView" />
+    </LinearLayout>
+
+</LinearLayout>
