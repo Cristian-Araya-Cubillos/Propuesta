@@ -50,10 +50,10 @@ public class datosEmpSucursal extends AppCompatActivity implements AdapterView.O
         }
     }
 
-    private List<paraListaEmpleadoS> getDatos(int Nombre_Sucursal) throws SQLException {
+    private List<paraListaEmpleadoS> getDatos(int id_sucursaluwu) throws SQLException {
         lst.clear();
         PreparedStatement a = uwu.conData.prepareCall("SELECT empleado.run, empleado.nombre, empleado.apellido1, empleado.apellido2 from empleado, trabaja_en WHERE Trabaja_en.run_empleado= empleado.run and trabaja_en.id_sucursal = ?");
-        a.setInt(1,Nombre_Sucursal);
+        a.setInt(1,id_sucursaluwu);
         rsData = a.executeQuery();
         while(rsData.next()) {
             //Estas variables se usan para obtener los datos que se quieran usar

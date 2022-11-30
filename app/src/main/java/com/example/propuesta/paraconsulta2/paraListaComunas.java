@@ -1,10 +1,10 @@
-package com.example.propuesta.administra_Empleado;
+package com.example.propuesta.paraconsulta2;
 
-public class paraListaEmpleadoS {
+public class paraListaComunas {
     public String nombre_com;
     public String run;
 
-    public paraListaEmpleadoS(String nombre_com, String run) {
+    public paraListaComunas(String nombre_com, String run) {
         this.nombre_com = nombre_com;
         this.run = run;
 
@@ -25,4 +25,6 @@ public class paraListaEmpleadoS {
     public void setRun(String run) {
         this.run = run;
     }
+
+
 }

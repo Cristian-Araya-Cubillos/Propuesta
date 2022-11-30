@@ -20,4 +20,9 @@
                 />
         </menu>
     </item>
+
+    <item android:id="@+id/op_Clientes"
+        android:icon="@drawable/ic_launcher_background"
+        android:title="Ver Clientes"
+        />
 </menu>
