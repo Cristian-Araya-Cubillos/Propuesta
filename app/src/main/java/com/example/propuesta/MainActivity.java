@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.propuesta.ManejoEmpleados.CreateEmpActivity;
+import com.example.propuesta.Vista.CRUD_Producto;
 import com.example.propuesta.administra_Empleado.datosEmpSucursal;
 import com.example.propuesta.paraconsulta2.ListaComuna;
 import com.google.android.material.tabs.TabLayout;
@@ -72,6 +73,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(mb);
                 return true;
             case R.id.agregar_erramienta:
+                Intent ae = new Intent(MainActivity.this, CRUD_Producto.class);
+                startActivity(ae);
                 Toast.makeText(this,"A H", Toast.LENGTH_SHORT).show();
                 return true;
 
