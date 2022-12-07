@@ -38,11 +38,11 @@ public class CRUD_Producto extends AppCompatActivity {
     }
 
     private void EditTextCharge() {
-        ET_id.findViewById(R.id.EdTxt_ID_CrearProducto);
-        ET_name.findViewById(R.id.EdTxt_Nombre_CrearProd);
-        ET_price.findViewById(R.id.EdTxt_Precio_CrearProd);
-        ET_stock.findViewById(R.id.EdTxt_Cantidad_CrearProd);
-        btn_CUD.findViewById(R.id.btn_CrearProd);
+        ET_id = findViewById(R.id.EdTxt_ID_CrearProducto);
+        ET_name= findViewById(R.id.EdTxt_Nombre_CrearProd);
+        ET_price= findViewById(R.id.EdTxt_Precio_CrearProd);
+        ET_stock= findViewById(R.id.EdTxt_Cantidad_CrearProd);
+        btn_CUD= findViewById(R.id.btn_CrearProd);
     }
     private void ActividadEliminar(Producto nuevoProd) {
         setfields(nuevoProd,2);

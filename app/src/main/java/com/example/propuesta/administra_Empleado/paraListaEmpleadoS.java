@@ -25,6 +25,4 @@ public class paraListaEmpleadoS {
     public void setRun(String run) {
         this.run = run;
     }
-
-
 }

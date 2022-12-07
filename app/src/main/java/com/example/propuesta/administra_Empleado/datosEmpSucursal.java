@@ -2,6 +2,11 @@ package com.example.propuesta.administra_Empleado;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.AnimationDrawable;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,11 +16,15 @@ import android.view.View;
 import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 import com.example.propuesta.MainActivity;
 import com.example.propuesta.R;
+import com.example.propuesta.VentEmergente;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -32,12 +41,18 @@ public class datosEmpSucursal extends AppCompatActivity implements AdapterView.O
     List<paraListaEmpleadoS> lst = new ArrayList<>();
     private ArrayList<String> lst_com = new ArrayList<>();
     private ArrayList<Integer> iterador = new ArrayList<>();
+    //------------------------------------------------
+    //------------------------------------------------
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_datos_emp_sucursal);
         Spinner spinner = findViewById(R.id.spinner);
+        AnimationDrawable animationDrawable = (AnimationDrawable) spinner.getBackground();
+        animationDrawable.setEnterFadeDuration(2500);
+        animationDrawable.setExitFadeDuration(5000);
+        animationDrawable.start();
         //El ArrayAdaptar es aquel que, en este caso se liga al Menu Desplegable de las Sucursales, generando que esta se actualize en base a las que se agregen
         ArrayAdapter<String> adapter;//(this, android.R.layout.simple_spinner_item);
         try {
@@ -50,10 +65,10 @@ public class datosEmpSucursal extends AppCompatActivity implements AdapterView.O
         }
     }
 
-    private List<paraListaEmpleadoS> getDatos(int Nombre_Sucursal) throws SQLException {
+    private List<paraListaEmpleadoS> getDatos(int id_sucursaluwu) throws SQLException {
         lst.clear();
         PreparedStatement a = uwu.conData.prepareCall("SELECT empleado.run, empleado.nombre, empleado.apellido1, empleado.apellido2 from empleado, trabaja_en WHERE Trabaja_en.run_empleado= empleado.run and trabaja_en.id_sucursal = ?");
-        a.setInt(1,Nombre_Sucursal);
+        a.setInt(1,id_sucursaluwu);
         rsData = a.executeQuery();
         while(rsData.next()) {
             //Estas variables se usan para obtener los datos que se quieran usar
@@ -62,7 +77,7 @@ public class datosEmpSucursal extends AppCompatActivity implements AdapterView.O
             String ape1 = rsData.getString("apellido1");
             String ape2 = rsData.getString("apellido2");
             String nom_ape = nombre1+" "+ape1+" "+ape2;
-            lst.add(new paraListaEmpleadoS(run,nom_ape)); //Se almacenan en la lista, la cual, mediante la funcion de la linea 79, crea la lista dinamica
+            lst.add(new paraListaEmpleadoS(nom_ape,run)); //Se almacenan en la lista, la cual, mediante la funcion de la linea 79, crea la lista dinamica
         }
         //System.out.println("Tama;o "+lst.size());
         return lst;
@@ -86,7 +101,11 @@ public class datosEmpSucursal extends AppCompatActivity implements AdapterView.O
             public void onItemClick(AdapterView<?> parent, View view, int i, long ide) {
                 //En esta funcion, se debera implementar otra interfaz para mostrar mas info sobre los empleados
                 paraListaEmpleadoS l = lst.get(i);
-                Toast.makeText(getBaseContext(),"Hola",Toast.LENGTH_SHORT).show();
+                Intent a = new Intent(datosEmpSucursal.this, VentEmergente.class);
+                a.putExtra("name",lst.get(i).getNombre_com());
+                startActivity(a);
+                //crearDialogo(view);
+                Toast.makeText(getBaseContext(),""+lst.get(i).getNombre_com(),Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -121,4 +140,5 @@ public class datosEmpSucursal extends AppCompatActivity implements AdapterView.O
         }
         return lst_com;
     }
+
 }

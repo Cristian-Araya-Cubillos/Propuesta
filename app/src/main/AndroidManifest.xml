@@ -17,7 +17,22 @@
         android:theme="@style/Theme.Propuesta"
         tools:targetApi="31">
         <activity
-            android:name=".CRUD_Producto"
+            android:name=".Vista.CRUD_Producto"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".VentEmergente"
+            android:theme="@style/hola"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ManejoEmpleados.CreateEmpActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -25,6 +40,13 @@
         </activity>
         <activity
             android:name=".administra_Empleado.datosEmpSucursal"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".paraconsulta2.ListaComuna"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

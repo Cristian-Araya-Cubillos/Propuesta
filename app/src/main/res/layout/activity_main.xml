@@ -7,12 +7,63 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/textView"
+        android:layout_width="192dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="3dp"
+        android:accessibilityLiveRegion="none"
+        android:breakStrategy="high_quality"
+        android:drawableTint="#572121"
+        android:gravity="center"
+        android:shadowColor="#FA1616"
+        android:shadowRadius="10"
+        android:text="La Hora Es:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#119CDC"
+        android:textStyle="bold"
+        android:typeface="monospace"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView"
+        android:name="com.example.propuesta.Agendas.AgendaDiaActual"
+        android:layout_width="184dp"
+        android:layout_height="278dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="13dp"
+        android:layout_marginBottom="51dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/fragmentContainerView2"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView2"
+        android:name="com.example.propuesta.Agendas.AgendaTotaluwu"
+        android:layout_width="185dp"
+        android:layout_height="278dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="51dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/fragmentContainerView" />
+
+    <TextView
+        android:id="@+id/aaaaaa"
+        style="@style/Widget.AppCompat.TextView"
+        android:layout_width="146dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="16dp"
+        android:accessibilityLiveRegion="none"
+        android:breakStrategy="high_quality"
+        android:drawableTint="#572121"
+        android:gravity="center"
+        android:shadowColor="#FA1616"
+        android:shadowRadius="10"
+        android:text="TextView"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 </androidx.constraintlayout.widget.ConstraintLayout>

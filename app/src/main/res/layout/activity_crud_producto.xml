@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="@string/TV_CreateProd"
+        android:text="TV_CreateProd"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -35,7 +35,7 @@
             android:ems="10"
             android:inputType="textPersonName"
             android:minHeight="48dp"
-            android:text="@string/eTx_CrearProd_Id"
+            android:hint="eTx_CrearProd_Id"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             android:autofillHints="" />
@@ -47,7 +47,7 @@
             android:ems="10"
             android:inputType="textPersonName"
             android:minHeight="48dp"
-            android:text="@string/eTx_CrearProd_Nombre"
+            android:hint="eTx_CrearProd_Nombre"
             android:autofillHints="" />
 
         <EditText
@@ -57,7 +57,7 @@
             android:ems="10"
             android:inputType="textPersonName"
             android:minHeight="48dp"
-            android:text="@string/EdTx_CrearProd_Cantidad"
+            android:hint="EdTx_CrearProd_Cantidad"
             android:autofillHints="" />
 
         <EditText
@@ -67,14 +67,14 @@
             android:ems="10"
             android:inputType="textPersonName"
             android:minHeight="48dp"
-            android:text="@string/EdTxt_CrearProd_Precio"
+            android:hint="EdTxt_CrearProd_Precio"
             android:autofillHints="" />
 
         <Button
             android:id="@+id/btn_CrearProd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/btn_CrearProd" />
+            android:text="btn_CrearProd" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
