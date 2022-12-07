@@ -1,5 +1,11 @@
 <resources>
     <string name="app_name">Propuesta</string>
+    <string name="TV_CreateProd">Crear Producto</string>
+    <string name="eTx_CrearProd_Id">Ingresa Identificador</string>
+    <string name="eTx_CrearProd_Nombre">Ingresa nombre del producto</string>
+    <string name="EdTx_CrearProd_Cantidad">Ingresar cantidad de producto</string>
+    <string name="EdTxt_CrearProd_Precio">Ingresar precio del producto</string>
+    <string name="btn_CrearProd">Crear un producto</string>
     <string-array name="sucursales">
         <item>San Miguel</item>
         <item>Pedro Aguirre Cerda</item>
