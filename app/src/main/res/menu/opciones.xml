@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:title="Ingresar Nuevo Empleado"
+        android:icon="@drawable/ic_launcher_background"
+        android:id="@+id/ing_emp"/>
+
     <item android:id="@+id/op_Emp"
         android:icon="@drawable/ic_launcher_background"
         android:title="Administrar Empleados"
@@ -25,4 +29,5 @@
         android:icon="@drawable/ic_launcher_background"
         android:title="Ver Clientes"
         />
+
 </menu>

@@ -23,7 +23,7 @@ public class adapter_listaAgendas extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return 0;
+        return lists.size();
     }
 
     @Override
@@ -38,15 +38,17 @@ public class adapter_listaAgendas extends BaseAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup parent) {
-        TextView nombre_C, runC;
+        TextView run, horario_ac,servicio;
         paraAgendas p = lists.get(i);
         if(view==null){
             view= LayoutInflater.from(context).inflate(R.layout.listviwe_agenda,null);
         }
-        nombre_C=view.findViewById(R.id.id_Nombre);
-        runC=view.findViewById(R.id.id_run);
-        nombre_C.setText(p.nombre_c);
-        runC.setText(p.rut_c);
+        run=view.findViewById(R.id.id_run);
+        servicio=view.findViewById(R.id.id_servicio);
+        horario_ac = view.findViewById(R.id.id_dia);
+        run.setText("Rut Cliente: "+p.rut_c);
+        servicio.setText(p.servicio);
+        horario_ac.setText(p.Horario);
         return view;
     }
 }

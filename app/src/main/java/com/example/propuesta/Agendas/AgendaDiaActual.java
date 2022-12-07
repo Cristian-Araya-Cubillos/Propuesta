@@ -20,7 +20,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -73,7 +75,7 @@ public class AgendaDiaActual extends Fragment {
     MainActivity uwu = new MainActivity();
     Statement stmData;
     ResultSet rsData;
-    List<paraListaComunas> lst = new ArrayList<>();
+    List<paraAgendas> lst = new ArrayList<>();
     ArrayList<String> lst_com = new ArrayList<>();
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -81,9 +83,9 @@ public class AgendaDiaActual extends Fragment {
         // Inflate the layout for this fragment
         View root = inflater.inflate(R.layout.fragment_agenda_dia_actual, container, false);
         mostrar = root.findViewById(R.id.ag_dia);
-        adapterComuna awa = null;
+        adapter_listaAgendas awa = null;
         try {
-            awa = new adapterComuna(root.getContext(), getDatos("Santiago"));
+            awa = new adapter_listaAgendas(root.getContext(), getDatos("Santiago"));
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -91,27 +93,32 @@ public class AgendaDiaActual extends Fragment {
         mostrar.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int i, long ide) {
-                paraListaComunas l = lst.get(i);
+                paraAgendas l = lst.get(i);
 
             }
         });
         return root;
     }
 
-    private List<paraListaComunas> getDatos(String NombredeComuna) throws SQLException {
+    private List<paraAgendas> getDatos(String NombredeComuna) throws SQLException {
 
         //stmData = uwu.conData.createStatement();
         lst.clear();
-
-        PreparedStatement a= uwu.conData.prepareCall("SELECT rut, nombre, apellido1 from clientes where comuna= ?");
-        a.setString(1,NombredeComuna);
+        //---------------------------------------------------------------------
+        SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd");
+        Date date = new Date(System.currentTimeMillis());                        //Obtengo Fecha de a;o, mes y dia actuales
+        System.out.println(formatter.format(date));
+        //------------------------------------------------------------------------
+        PreparedStatement a= uwu.conData.prepareCall("SELECT * from agenda, servicio where agenda.id_servicio = servicio.id_servicio and agenda.fecha = ?");
+        a.setDate(1, java.sql.Date.valueOf(formatter.format(date))); //
         rsData = a.executeQuery();
         while(rsData.next()) {
-            String run = rsData.getString("Rut");
-            String nombre1 =rsData.getString("nombre");
-            String ape1 = rsData.getString("apellido1");
-            String nom_ape = nombre1+" "+ape1;
-            lst.add(new paraListaComunas(run,nom_ape));
+            String run = rsData.getString("rut_cliente");
+            String serv_id =rsData.getString("nombre");
+            String fecha = rsData.getString("fecha");
+            String hora_atencion = rsData.getString("hora_atencion");
+            String horario = fecha+" a las: "+hora_atencion;
+            lst.add(new paraAgendas(horario,run,serv_id));
         }
         System.out.println("Tama;o "+lst.size());
         return lst;

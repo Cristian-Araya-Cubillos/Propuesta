@@ -2,38 +2,29 @@ package com.example.propuesta;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.widget.ViewPager2;
 
-import android.app.TabActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.ListView;
-import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.propuesta.Agendas.Adapter_Agenda;
-import com.example.propuesta.Agendas.AgendaDiaActual;
-import com.example.propuesta.Agendas.AgendaTotaluwu;
+import com.example.propuesta.ManejoEmpleados.CreateEmpActivity;
 import com.example.propuesta.administra_Empleado.datosEmpSucursal;
 import com.example.propuesta.paraconsulta2.ListaComuna;
-import com.example.propuesta.paraconsulta2.adapterComuna;
 import com.google.android.material.tabs.TabLayout;
 
 import java.sql.Connection;
-import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import android.widget.TabHost;
 public class MainActivity extends AppCompatActivity {
     private  TabLayout tabLayout;
     private ViewPager2 viewPager;
@@ -52,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
     String string_minutos;
     String string_hora;
     //----------------------------------------------------
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -88,6 +81,11 @@ public class MainActivity extends AppCompatActivity {
             case R.id.op_Clientes:
                 Intent cb = new Intent(MainActivity.this, ListaComuna.class);
                 startActivity(cb);
+                return true;
+            case R.id.ing_emp:
+                Intent ho = new Intent(MainActivity.this, CreateEmpActivity.class);
+                startActivity(ho);
+                return true;
         }
         return super.onOptionsItemSelected(item);
     }
@@ -118,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
 
     private String getTimerText()
     {
+
         Calendar c=Calendar.getInstance();
         int hora=c.get(Calendar.HOUR);
         int minutos=c.get(Calendar.MINUTE);
@@ -128,5 +127,6 @@ public class MainActivity extends AppCompatActivity {
 
         return string_hora + " : "+string_minutos + " : " + string_segundos;
     }
+
 
 }
