@@ -22,7 +22,6 @@ public class CRUD_Producto extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crud_producto);
         EditTextCharge();
-        EditTextCharge();
         Bundle parametros = this.getIntent().getExtras();
         if(parametros !=null){
              realizar = parametros.getInt("datos");
