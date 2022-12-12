@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
     android:background="@drawable/para_lista"
-    tools:context=".administra_Empleado.datosEmpSucursal">
-    <ImageView
-        android:id="@+id/imageBase"
-        android:layout_width="0dp"
-        android:layout_height="80dp"
-        android:layout_weight="20"
-        tools:srcCompat="@tools:sample/avatars" />
+    tools:context=".administra_Boleta.datosBoletaCliente">
 
     <LinearLayout
         android:layout_width="0dp"
@@ -19,18 +14,20 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/textnomEmp"
+            android:id="@+id/textnum_Boleta"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="50"
+            android:gravity="center"
             android:text="TextView"
             android:textColor="#000000" />
 
         <TextView
-            android:id="@+id/textRun_emp"
+            android:id="@+id/textfecha_Boleta"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="50"
+            android:gravity="center"
             android:text="TextView"
             android:textColor="#000000" />
     </LinearLayout>

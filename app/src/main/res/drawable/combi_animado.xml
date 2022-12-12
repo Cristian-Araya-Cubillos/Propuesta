@@ -2,12 +2,12 @@
 <animation-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:drawable="@drawable/animadouwu"
-        android:duration="5000"/>
+        android:duration="2500"/>
     <item
         android:drawable="@drawable/animadouwu2"
-        android:duration="5000"/>
+        android:duration="2500"/>
     <item
         android:drawable="@drawable/animadouwu3"
-        android:duration="5000"/>
+        android:duration="2500"/>
 
 </animation-list>

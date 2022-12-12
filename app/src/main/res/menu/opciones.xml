@@ -29,5 +29,8 @@
         android:icon="@drawable/ic_launcher_background"
         android:title="Ver Clientes"
         />
+    <item
+        android:id="@+id/op_boletas"
+        android:title="Ver Boletas" />
 
 </menu>

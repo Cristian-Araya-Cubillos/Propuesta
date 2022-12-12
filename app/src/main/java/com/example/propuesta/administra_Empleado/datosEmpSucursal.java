@@ -38,6 +38,7 @@ public class datosEmpSucursal extends AppCompatActivity implements AdapterView.O
     MainActivity uwu = new MainActivity();
     Statement stmData;
     ResultSet rsData;
+
     List<paraListaEmpleadoS> lst = new ArrayList<>();
     private ArrayList<String> lst_com = new ArrayList<>();
     private ArrayList<Integer> iterador = new ArrayList<>();
@@ -49,9 +50,10 @@ public class datosEmpSucursal extends AppCompatActivity implements AdapterView.O
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_datos_emp_sucursal);
         Spinner spinner = findViewById(R.id.spinner);
+        getSupportActionBar().setTitle("Empleados por Sucursal");
         AnimationDrawable animationDrawable = (AnimationDrawable) spinner.getBackground();
         animationDrawable.setEnterFadeDuration(2500);
-        animationDrawable.setExitFadeDuration(5000);
+        animationDrawable.setExitFadeDuration(2500);
         animationDrawable.start();
         //El ArrayAdaptar es aquel que, en este caso se liga al Menu Desplegable de las Sucursales, generando que esta se actualize en base a las que se agregen
         ArrayAdapter<String> adapter;//(this, android.R.layout.simple_spinner_item);
@@ -84,6 +86,19 @@ public class datosEmpSucursal extends AppCompatActivity implements AdapterView.O
 
     }
 
+    public void elimin(String rut) throws SQLException {
+        PreparedStatement b = uwu.conData.prepareCall("DELETE FROM trabaja_en where run_empleado = ?");
+        b.setString(1,rut);
+        b.executeUpdate();
+        PreparedStatement a = uwu.conData.prepareCall("DELETE FROM empleado WHERE run = ?");
+        a.setString(1,rut);
+        a.executeUpdate();
+        System.out.println(rut);
+        //String eli = "DELETE FROM empleado WHERE run = "+rut;
+        //int owo = uwu.conData.createStatement().executeUpdate(eli);
+        //System.out.println(owo);
+    }
+
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         String NameComuna= parent.getItemAtPosition(position).toString();
@@ -101,8 +116,10 @@ public class datosEmpSucursal extends AppCompatActivity implements AdapterView.O
             public void onItemClick(AdapterView<?> parent, View view, int i, long ide) {
                 //En esta funcion, se debera implementar otra interfaz para mostrar mas info sobre los empleados
                 paraListaEmpleadoS l = lst.get(i);
+                //System.out.println();
                 Intent a = new Intent(datosEmpSucursal.this, VentEmergente.class);
                 a.putExtra("name",lst.get(i).getNombre_com());
+                a.putExtra("rut",lst.get(i).getRun());
                 startActivity(a);
                 //crearDialogo(view);
                 Toast.makeText(getBaseContext(),""+lst.get(i).getNombre_com(),Toast.LENGTH_SHORT).show();

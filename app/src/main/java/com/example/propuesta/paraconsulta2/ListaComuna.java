@@ -1,5 +1,6 @@
 package com.example.propuesta.paraconsulta2;
 
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -31,7 +32,12 @@ public class ListaComuna extends AppCompatActivity implements AdapterView.OnItem
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_comuna);
+        getSupportActionBar().setTitle("Clientes por Comuna");
         Spinner spinner = findViewById(R.id.spinner);
+        AnimationDrawable animationDrawable = (AnimationDrawable) spinner.getBackground();
+        animationDrawable.setEnterFadeDuration(2500);
+        animationDrawable.setExitFadeDuration(5000);
+        animationDrawable.start();
         ArrayAdapter<String> adapter;//(this, android.R.layout.simple_spinner_item);
         try {
             adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,com());

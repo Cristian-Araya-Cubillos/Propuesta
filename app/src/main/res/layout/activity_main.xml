@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/pafondo"
     tools:context=".MainActivity">
+
 
     <TextView
         android:id="@+id/textView"
@@ -25,6 +27,8 @@
         android:typeface="monospace"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView"
@@ -58,12 +62,38 @@
         android:layout_marginEnd="16dp"
         android:accessibilityLiveRegion="none"
         android:breakStrategy="high_quality"
-        android:drawableTint="#572121"
+        android:drawableTint="#FFFFFF"
         android:gravity="center"
-        android:shadowColor="#FA1616"
+        android:shadowColor="#FFFFFF"
         android:shadowRadius="10"
-        android:text="TextView"
+        android:textColor="#C5BABA"
         android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/chara"
+        android:layout_width="401dp"
+        android:layout_height="206dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="44dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/fragmentContainerView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/crea_age"
+        android:layout_width="138dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="161dp"
+        android:layout_marginEnd="162dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/unawa"
+        android:onClick="insrt_agenda"
+        android:text="Crear Agenda"
+        app:layout_constraintBottom_toTopOf="@+id/chara"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
