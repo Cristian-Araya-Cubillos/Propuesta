@@ -4,13 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/pafondo"
-    tools:context=".paraconsulta2.ListaComuna">
+    tools:context=".administra_Boleta.datosBoletaCliente">
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/spn_boleta"
         android:layout_width="409dp"
-        android:background="@drawable/combi_animado"
         android:layout_height="wrap_content"
         android:layout_marginStart="1dp"
         android:layout_marginTop="24dp"
@@ -53,7 +51,7 @@
             android:orientation="vertical">
 
             <ListView
-                android:id="@+id/tablaComunas"
+                android:id="@+id/tablaBoleta"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
         </LinearLayout>

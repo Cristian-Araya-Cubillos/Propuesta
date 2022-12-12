@@ -10,8 +10,9 @@ public class clsConexionPG {
     static String driver = "org.postgresql.Driver";
     static String dbname = "peluqueria";
     static String url = "jdbc:postgresql://10.4.3.195:5432/" + dbname;
-    static String username = "peluqueria";
-    static String password = "stL099m";
+    static String username = "peluqueria_dev";
+    //static String password = "stL099m";
+    static String password = "aFg55k4";
     //Creamos nuestra funcion para Conectarnos a Postgresql
     public  Connection conexionBD(){
         try{
