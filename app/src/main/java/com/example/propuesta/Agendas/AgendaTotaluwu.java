@@ -1,5 +1,6 @@
 package com.example.propuesta.Agendas;
 
+import android.content.Intent;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
@@ -7,9 +8,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.propuesta.MainActivity;
 import com.example.propuesta.R;
+import com.example.propuesta.VentEmergente;
+import com.example.propuesta.VentEmergente_agenda;
+import com.example.propuesta.administra_Empleado.datosEmpSucursal;
+import com.example.propuesta.administra_Empleado.paraListaEmpleadoS;
 import com.example.propuesta.paraconsulta2.adapterComuna;
 import com.example.propuesta.paraconsulta2.paraListaComunas;
 
@@ -69,12 +75,13 @@ public class AgendaTotaluwu extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
+
     ListView mostrar;
     MainActivity uwu = new MainActivity();
     Statement stmData;
     ResultSet rsData;
     List<paraAgendas> lst = new ArrayList<>();
-    ArrayList<String> lst_com = new ArrayList<>();
+    ArrayList<String> ids_elm = new ArrayList<>();
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -91,7 +98,15 @@ public class AgendaTotaluwu extends Fragment {
         mostrar.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int i, long ide) {
-                paraAgendas l = lst.get(i);
+                //En esta funcion, se debera implementar otra interfaz para mostrar mas info sobre los empleados
+
+                //System.out.println();
+                Intent a = new Intent(getContext(), VentEmergente_agenda.class);
+                a.putExtra("id_ag",ids_elm.get(i));
+                a.putExtra("rut_ag",lst.get(i).getRut_c());
+                startActivity(a);
+                //crearDialogo(view);
+                //Toast.makeText(getBaseContext(),""+lst.get(i).getNombre_com(),Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -117,7 +132,17 @@ public class AgendaTotaluwu extends Fragment {
             String hora_atencion = rsData.getString("hora_atencion");
             String horario = fecha+" a las: "+hora_atencion;
             lst.add(new paraAgendas(horario,run,serv_id));
+            ids_elm.add(rsData.getString("id_servicio"));
         }
         return lst;
+    }
+
+    public void elimin_ag(String rut, int id) throws SQLException {
+        PreparedStatement b = uwu.conData.prepareCall("DELETE FROM agenda where rut_cliente = ? and id_servicio = ?");
+        b.setString(1,rut);
+        b.setInt(2,id);
+        int a =b.executeUpdate();
+        System.out.println("Elimina? "+a);
+
     }
 }
