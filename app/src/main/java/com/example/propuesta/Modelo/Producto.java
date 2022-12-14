@@ -1,6 +1,7 @@
 package com.example.propuesta.Modelo;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class Producto implements Serializable {
     private int id_producto;

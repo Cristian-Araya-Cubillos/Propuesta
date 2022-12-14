@@ -40,7 +40,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="50dp"
             android:ems="10"
             android:hint="Apellido Paterno"
@@ -52,7 +52,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="50dp"
             android:ems="10"
             android:hint="Apellido Materno"
@@ -64,23 +64,34 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="50dp"
             android:ems="10"
             android:hint="Rut"
             android:inputType="textPersonName"
             android:minHeight="48dp" />
 
+        <EditText
+            android:id="@+id/create_pin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="50dp"
+            android:hint="Pin Empleado"
+            android:inputType="textPersonName"
+            android:minHeight="48dp" />
+
         <Button
-            android:id="@+id/button"
+            android:id="@+id/empleado_new"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="100dp"
             android:layout_marginTop="30dp"
             android:layout_marginEnd="100dp"
             android:background="@drawable/custom_button"
-            android:textAllCaps="false"
-            android:text="Button" />
+            android:text="Ingresar Empleado"
+            android:textAllCaps="false" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

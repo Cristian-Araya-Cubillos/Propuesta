@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Vista.CRUD_Cliente">
+
+    <TextView
+        android:id="@+id/TV_CL_Title"
+        android:layout_width="411dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="42dp"
+        android:text="@string/TV_CL_TitleS"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.275" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="2dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TV_CL_Title">
+
+        <EditText
+            android:id="@+id/ETV_CL_RUN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/ingrese_su_run"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:textColorHint="#546E7A" />
+
+        <EditText
+            android:id="@+id/ETV_CL_Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/ETV_CL_Name"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:textColorHint="#546E7A" />
+
+        <EditText
+            android:id="@+id/ETV_CL_Apellido1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/ETV_CL_Apellido1"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:textColorHint="#546E7A" />
+
+        <EditText
+            android:id="@+id/ETV_CL_Apellido2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/ETV_CL_Apellido2"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:textColorHint="#546E7A" />
+
+        <TextView
+            android:id="@+id/TV_CL_SelectComuna"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/CL_SelectComuna"
+            android:textSize="20sp" />
+
+        <Spinner
+            android:id="@+id/SP_CL_SelectComuna"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#BED5D5D5"
+            android:minHeight="48dp"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_CL_agregar"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/btn_CL_agregar"
+                android:textColor="#00796B" />
+
+            <Button
+                android:id="@+id/btn_CL_cancelar"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/btn_CL_Cancelar"
+                android:textColor="#00796B" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

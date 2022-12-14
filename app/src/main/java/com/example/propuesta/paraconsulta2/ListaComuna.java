@@ -57,7 +57,7 @@ public class ListaComuna extends AppCompatActivity implements AdapterView.OnItem
         while(rsData.next()){
             String comun = rsData.getString("comuna");
             lst_com.add(comun);
-            System.out.println(comun);
+
         }
         return lst_com;
     }

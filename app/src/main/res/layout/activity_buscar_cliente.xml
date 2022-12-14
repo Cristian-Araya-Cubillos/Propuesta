@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Vista.BuscarCliente">
+
+    <LinearLayout
+        android:id="@+id/linearLayout5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/TV_CL_BuscarCliente"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/TV_CL_buscar_cliente_costo_total"
+            android:textAlignment="center"
+            android:textSize="24sp" />
+
+        <Spinner
+            android:id="@+id/SP_BusquedaCTotal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#AED3D3D3"
+            android:minHeight="48dp"
+            tools:ignore="SpeakableTextPresentCheck"
+            android:entries="@array/F_MostrarCliente_Opcion"
+            />
+
+        <EditText
+            android:id="@+id/ET_CL_BuscarRUN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/ingrese_su_run"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:textColorHint="#546E7A" />
+
+        <Button
+            android:id="@+id/BT_CL_Buscar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ET_CL_buscar" />
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/FCL_Contenedor1"
+            android:name="com.example.propuesta.Vista.FragmentCliente.FragmentMostrarCliente"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout="@layout/fragment_mostrar_cliente" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
