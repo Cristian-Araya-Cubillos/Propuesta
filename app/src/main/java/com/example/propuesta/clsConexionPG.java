@@ -28,7 +28,7 @@ public class clsConexionPG {
     }
 
     //Creamos la funcion para Cerrar la Conexion
-    protected  void cerrar_conexion(Connection con)throws  Exception {
-        con.close();
+    public  void cerrar_conexion()throws  Exception {
+        conexion.close();
     }
 }

@@ -93,10 +93,6 @@ public class datosEmpSucursal extends AppCompatActivity implements AdapterView.O
         PreparedStatement a = uwu.conData.prepareCall("DELETE FROM empleado WHERE run = ?");
         a.setString(1,rut);
         a.executeUpdate();
-        System.out.println(rut);
-        //String eli = "DELETE FROM empleado WHERE run = "+rut;
-        //int owo = uwu.conData.createStatement().executeUpdate(eli);
-        //System.out.println(owo);
     }
 
     @Override
@@ -151,9 +147,7 @@ public class datosEmpSucursal extends AppCompatActivity implements AdapterView.O
             int cide = rsData.getInt("id_sucursal");
             String comun = rsData.getString("comuna");
             iterador.add(cide);
-            System.out.println(cide);
             lst_com.add(comun);
-            System.out.println(comun);
         }
         return lst_com;
     }

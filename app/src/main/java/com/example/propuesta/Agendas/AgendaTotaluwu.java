@@ -118,7 +118,6 @@ public class AgendaTotaluwu extends Fragment {
             String horario = fecha+" a las: "+hora_atencion;
             lst.add(new paraAgendas(horario,run,serv_id));
         }
-        System.out.println("Tama;o "+lst.size());
         return lst;
     }
 }

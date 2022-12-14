@@ -68,7 +68,6 @@ public class datosBoletaCliente extends AppCompatActivity implements AdapterView
                 String fecha = rsData.getString("empleado_run");
                 lst.add(new paraBoletas(numero_boleta,fecha));
             }
-            System.out.println("Tama;o "+lst.size());
         }catch(Exception e){
 
         }
@@ -82,7 +81,6 @@ public class datosBoletaCliente extends AppCompatActivity implements AdapterView
         Toast.makeText(parent.getContext(),Numero_Boleta,Toast.LENGTH_SHORT).show();
         mostrar= findViewById(R.id.tablaBoleta);
         adapterBoleta awa = new adapterBoleta(this, getDatos(Numero_Boleta));
-        System.out.println(awa.isEmpty());
         mostrar.setAdapter(awa);
         mostrar.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

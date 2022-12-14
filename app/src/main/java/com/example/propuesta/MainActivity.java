@@ -17,7 +17,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.propuesta.ManejoEmpleados.CreateEmpActivity;
+import com.example.propuesta.Vista.BuscarCliente;
+import com.example.propuesta.Vista.CRUD_Cliente;
 import com.example.propuesta.Vista.CRUD_Producto;
+import com.example.propuesta.Vista.VerClientes;
 import com.example.propuesta.adminAgendas.Crea_Agenda;
 import com.example.propuesta.administra_Boleta.datosBoletaCliente;
 import com.example.propuesta.administra_Empleado.datosEmpSucursal;
@@ -156,6 +159,21 @@ public class MainActivity extends AppCompatActivity {
             case R.id.op_boletas:
                 Intent bol = new Intent(MainActivity.this, datosBoletaCliente.class);
                 startActivity(bol);
+                return true;
+            case R.id.agregar_Cliente:
+                Intent cl = new Intent(MainActivity.this, CRUD_Cliente.class);
+                Bundle bundle = new Bundle();
+                bundle.putInt("datos", 1);
+                cl.putExtras(bundle);
+                startActivity(cl);
+                return true;
+            case R.id.Ver_Cliente:
+                Intent vcl = new Intent(MainActivity.this, VerClientes.class);
+                startActivity(vcl);
+                return true;
+            case R.id.Buscar_Cliente:
+                Intent bcl = new Intent(MainActivity.this, BuscarCliente.class);
+                startActivity(bcl);
                 return true;
         }
         return super.onOptionsItemSelected(item);
