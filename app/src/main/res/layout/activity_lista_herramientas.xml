@@ -80,6 +80,13 @@
                 android:textStyle="italic" />
         </LinearLayout>
 
+        <Button
+            android:id="@+id/delete_hr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Eliminar" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -36,16 +36,13 @@
         <menu>
             <item android:id="@+id/ver_herramientas"
                 android:icon="@drawable/ic_launcher_background"
-                android:title="Ver herramientas"
+                android:title="Ver / Quitar herramientas"
                 />
             <item android:id="@+id/agregar_herramienta"
                 android:icon="@drawable/ic_launcher_background"
                 android:title="Agregar herramientas"
                 />
-            <item android:id="@+id/quitar_herramienta"
-                android:icon="@drawable/ic_launcher_background"
-                android:title="Quitar herramientas"
-                />
+
         </menu>
     </item>
 

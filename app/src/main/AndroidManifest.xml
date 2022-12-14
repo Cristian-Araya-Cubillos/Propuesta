@@ -116,6 +116,24 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
+        <activity
+            android:name=".herramientas.ingresa_herramienta"
+            android:exported="false"
+            android:theme="@style/hola">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+        <activity
+            android:name=".VentEmergente_herr"
+            android:exported="false"
+            android:theme="@style/hola">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
     </application>
 
 </manifest>
