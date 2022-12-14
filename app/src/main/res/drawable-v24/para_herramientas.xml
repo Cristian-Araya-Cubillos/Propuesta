@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:ignore="ExtraText">
+    //Color de fondo
+    <solid android:color="#E6E6FA"/>
+    //Diseno y Color de bordes
+    <stroke android:width="2dp" android:color="#008f39"/>
+    //Diseno de Esquinas
+    <corners android:radius="20dp"/>
+
+</shape>

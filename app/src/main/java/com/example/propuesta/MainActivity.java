@@ -24,6 +24,7 @@ import com.example.propuesta.Vista.VerClientes;
 import com.example.propuesta.adminAgendas.Crea_Agenda;
 import com.example.propuesta.administra_Boleta.datosBoletaCliente;
 import com.example.propuesta.administra_Empleado.datosEmpSucursal;
+import com.example.propuesta.herramientas.datosHerramientas;
 import com.example.propuesta.paraconsulta2.ListaComuna;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.data.BarData;
@@ -139,13 +140,19 @@ public class MainActivity extends AppCompatActivity {
                 Intent mb = new Intent(MainActivity.this, datosEmpSucursal.class);
                 startActivity(mb);
                 return true;
-            case R.id.agregar_erramienta:
+            case R.id.ver_herramientas:
+                Intent ee = new Intent(MainActivity.this, datosHerramientas.class);
+                startActivity(ee);
+                Toast.makeText(this,"A H", Toast.LENGTH_SHORT).show();
+                return true;
+
+            case R.id.agregar_herramienta:
                 Intent ae = new Intent(MainActivity.this, CRUD_Producto.class);
                 startActivity(ae);
                 Toast.makeText(this,"A H", Toast.LENGTH_SHORT).show();
                 return true;
 
-            case R.id.quitar_erramienta:
+            case R.id.quitar_herramienta:
                 Toast.makeText(this,"Q H", Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.op_Clientes:

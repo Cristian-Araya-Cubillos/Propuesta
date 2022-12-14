@@ -34,13 +34,17 @@
         android:title="Op Herramientas"
         >
         <menu>
-            <item android:id="@+id/agregar_erramienta"
+            <item android:id="@+id/ver_herramientas"
                 android:icon="@drawable/ic_launcher_background"
-                android:title="Administrar Empleados"
+                android:title="Ver herramientas"
                 />
-            <item android:id="@+id/quitar_erramienta"
+            <item android:id="@+id/agregar_herramienta"
                 android:icon="@drawable/ic_launcher_background"
-                android:title="Administrar Empleados"
+                android:title="Agregar herramientas"
+                />
+            <item android:id="@+id/quitar_herramienta"
+                android:icon="@drawable/ic_launcher_background"
+                android:title="Quitar herramientas"
                 />
         </menu>
     </item>
